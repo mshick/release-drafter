@@ -16,6 +16,6 @@ export const TARGET_EVENTS = {
     (context: Context): boolean => Utils.isSemanticVersioningTagName(ContextHelper.getTagName(context)),
   ],
   'push-branch': [
-    (context: Context): boolean => ContextHelper.isPush(context) && Utils.isSemanticVersioningTagName(getInput('tag')),
+    (context: Context): boolean => ContextHelper.isPush(context) && Utils.isSemanticVersioningTagName(getInput('version') || getInput('tag')),
   ]
 };
